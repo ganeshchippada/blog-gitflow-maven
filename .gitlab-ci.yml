@@ -19,7 +19,6 @@ stages:
 
 mvn-build:
     stage: build
-    tags: [java11]
     script:
         - ./mvnw clean verify
     only:
@@ -27,7 +26,6 @@ mvn-build:
 
 deploy:
     stage: deploy
-    tags: [java11]
     dependencies:
         - mvn-build
     script:
